@@ -11,9 +11,9 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/profPic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/profpic"
             android:layout_centerHorizontal="true"/>
         <Button
             android:id="@+id/btnChange"
