@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,8 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText mTextPassword;
     Button mButtonLogin;
     DatabaseHelper db;
-    ViewGroup progressView;
-    protected boolean isProgressShowing = false;
     Boolean signUp = false, user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             user = db.addUser("user", "useruser");
             signUp = true;
         }
-//        if(user==true){
-//            Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show();
-//        }
+
         mTextUsername = (EditText)findViewById(R.id.etUser);
         mTextPassword = (EditText)findViewById(R.id.etPass);
         mButtonLogin = (Button)findViewById(R.id.btnLogin);
@@ -45,6 +42,15 @@ public class LoginActivity extends AppCompatActivity {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 Boolean res = db.checkUser(user, pwd);
+
+                if(TextUtils.isEmpty(user)){
+                    mTextUsername.setError("Username is required");
+                }
+
+                if(TextUtils.isEmpty(pwd)){
+                    mTextPassword.setError("Password is required");
+                }
+
                 if(res == true)
                 {
                     Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
@@ -52,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this,"Login Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Incorrect username / password", Toast.LENGTH_SHORT).show();
                 }
 //                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
 //                startActivity(i);
