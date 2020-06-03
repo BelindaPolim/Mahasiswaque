@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mahasiswaque_23490</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="Prodi">Prodi</string>
+    <string name="Angkatan">Angkatan</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

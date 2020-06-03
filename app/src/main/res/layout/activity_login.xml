@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bekgron">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/icon"/>
+    <EditText
+        android:id="@+id/etUser"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@drawable/user"
+        android:hint="Username"
+        android:textColor="@color/colorPrimary"/>
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@drawable/pass"
+        android:hint="Password"/>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:text="Login"/>
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:textColor="#ffffff"-->
+    <!--            android:text="Not registered? Sign up "/>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvSignup"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:textColor="@color/pop"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:text="here"/>-->
+    <!--    </LinearLayout>-->
+</LinearLayout>

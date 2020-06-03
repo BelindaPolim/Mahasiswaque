@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "625775941630",
+    "firebase_url": "https://mahasiswaque-606f8.firebaseio.com",
+    "project_id": "mahasiswaque-606f8",
+    "storage_bucket": "mahasiswaque-606f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625775941630:android:4622ad04ee075f04b192af",
+        "android_client_info": {
+          "package_name": "id.ac.umn.mahasiswaque"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625775941630-2bnripmgmcbk7mmhu85654cjgqlhmpjm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.umn.mahasiswaque",
+            "certificate_hash": "fa19249940740d310856dfe6690a6de0d21b2561"
+          }
+        },
+        {
+          "client_id": "625775941630-b6962m3luk0k0f9r5583bd3emo7i5kld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN64aziaPlvtMIFTRmihqn30J7BMlVEy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625775941630-b6962m3luk0k0f9r5583bd3emo7i5kld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

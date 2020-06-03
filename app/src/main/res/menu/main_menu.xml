@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sortNIM"
+        app:showAsAction="never"
+        android:title="Sort by NIM">
+    </item>
+    <item
+        android:id="@+id/sortNama"
+        app:showAsAction="never"
+        android:title="Sort by Nama">
+    </item>
+    <item
+        android:id="@+id/abtMe"
+        app:showAsAction="never"
+        android:title="About Me">
+    </item>
+    <item
+        android:id="@+id/logout"
+        app:showAsAction="never"
+        android:title="LOGOUT">
+    </item>
+</menu>
