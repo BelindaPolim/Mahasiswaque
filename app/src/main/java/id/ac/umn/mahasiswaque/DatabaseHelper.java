@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME ="user.db";
+    public static final String DATABASE_NAME ="Login.db";
     public static final String TABLE_NAME ="users";
     public static final String COL_1 ="ID";
     public static final String COL_2 ="username";
@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT)");
+        db.execSQL("create table users (username TEXT primary key, password TEXT)");
     }
 
     @Override
@@ -30,26 +30,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long addUser(String user, String password){
+    public boolean addUser(String user, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",user);
         contentValues.put("password",password);
-        long res = db.insert("registeruser",null,contentValues);
+        long res = db.insert("users",null,contentValues);
         db.close();
-        return  res;
+        if(res == 1) return false;
+        else return true;
     }
 
     public boolean checkUser(String username, String password){
-        String[] columns = { COL_1 };
-        SQLiteDatabase db = getReadableDatabase();
-        String selection = COL_2 + "=?" + " and " + COL_3 + "=?";
-        String[] selectionArgs = { username, password };
-        Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from users where username=? and password=?", new String[]{username, password});
         int count = cursor.getCount();
         cursor.close();
         db.close();
-
         if(count>0)
             return  true;
         else

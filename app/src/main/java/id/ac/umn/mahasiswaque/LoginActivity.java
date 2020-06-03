@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseHelper db;
     ViewGroup progressView;
     protected boolean isProgressShowing = false;
-
+    Boolean signUp = false, user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,13 @@ public class LoginActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this,android.R.style.Theme_Translucent_NoTitleBar);
 
         db = new DatabaseHelper(this);
+        if(signUp == false){
+            user = db.addUser("user", "useruser");
+            signUp = true;
+        }
+//        if(user==true){
+//            Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show();
+//        }
         mTextUsername = (EditText)findViewById(R.id.etUser);
         mTextPassword = (EditText)findViewById(R.id.etPass);
         mButtonLogin = (Button)findViewById(R.id.btnLogin);
@@ -35,20 +42,20 @@ public class LoginActivity extends AppCompatActivity {
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String user = mTextUsername.getText().toString().trim();
-//                String pwd = mTextPassword.getText().toString().trim();
-//                Boolean res = db.checkUser(user, pwd);
-//                if(res == true)
-//                {
-//                    Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
-//                    startActivity(HomePage);
-//                }
-//                else
-//                {
-//                    Toast.makeText(LoginActivity.this,"Login Failed!", Toast.LENGTH_SHORT).show();
-//                }
-                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(i);
+                String user = mTextUsername.getText().toString().trim();
+                String pwd = mTextPassword.getText().toString().trim();
+                Boolean res = db.checkUser(user, pwd);
+                if(res == true)
+                {
+                    Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
+                    startActivity(HomePage);
+                }
+                else
+                {
+                    Toast.makeText(LoginActivity.this,"Login Failed!", Toast.LENGTH_SHORT).show();
+                }
+//                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+//                startActivity(i);
             }
         });
     }
