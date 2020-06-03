@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -72,6 +73,8 @@ public class Insert extends AppCompatActivity {
     }
 
     public void insData(View view) {
+        final ImageView profpic = (ImageView)findViewById(R.id.profPic);
+
         final EditText nimField = (EditText) findViewById(R.id.etNIM);
         String NIM = nimField.getText().toString();
 
@@ -86,6 +89,16 @@ public class Insert extends AppCompatActivity {
 
         final EditText bioField = (EditText) findViewById(R.id.etBio);
         String bio = bioField.getText().toString();
+
+        if(TextUtils.isEmpty(NIM)){
+            nimField.setError("NIM is required");
+        }
+        if(TextUtils.isEmpty(name)){
+            nameField.setError("Name is required");
+        }
+        if(TextUtils.isEmpty(bio)){
+            bioField.setError("Please write something");
+        }
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
