@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.logging.Handler;
+import java.util.prefs.Preferences;
 
 public class HomeActivity extends AppCompatActivity {
     EditText inputSearch;
@@ -99,6 +100,9 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.logout:
                 intent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(intent);
+                Toast.makeText(HomeActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
+                startActivity(new
+                        Intent(getBaseContext(),LoginActivity.class));
                 finish();
                 return true;
             default:

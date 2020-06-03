@@ -135,9 +135,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/etBio"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="Insert Data"
-            android:onClick="insData"
-            android:background="@color/pop"
+            android:text="Confirm Edit"
+            android:onClick="confirmEdit"
+            android:background="#95ECC3"
             android:layout_width="fill_parent">
         </Button>
     </RelativeLayout>

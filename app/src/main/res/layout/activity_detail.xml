@@ -15,18 +15,11 @@
             android:layout_height="200dp"
             android:src="@drawable/profpic"
             android:layout_centerHorizontal="true"/>
-        <Button
-            android:id="@+id/btnChange"
-            android:layout_below="@+id/profPic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Load Picture"/>
         <TextView
             android:id="@+id/tvNIM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnChange"
+            android:layout_below="@id/profPic"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:text="NIM     "
             android:textStyle="bold"
@@ -36,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tvNIM"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_below="@id/btnChange"
+            android:layout_below="@id/profPic"
             android:background="#ffffff"
             android:inputType="number"
             android:hint="00000023490"
@@ -131,14 +124,26 @@
             android:layout_width="fill_parent">
         </EditText>
         <Button
-            android:id="@+id/btnInsert"
+            android:id="@+id/btnEdit"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etBio"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="Insert Data"
-            android:onClick="insData"
+            android:text=" Edit "
+            android:onClick="editProf"
+            android:background="#B3EC95"
+            android:layout_alignStart="@+id/etBio"
+            android:layout_width="wrap_content">
+        </Button>
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/etBio"
+            android:layout_below="@+id/etBio"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="Delete"
+            android:onClick="delProf"
             android:background="@color/pop"
-            android:layout_width="fill_parent">
+            android:layout_width="wrap_content">
         </Button>
     </RelativeLayout>
 </ScrollView>
