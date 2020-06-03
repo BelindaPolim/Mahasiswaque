@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="@color/colorAccent">
+    <View
+        android:id="@+id/bgView"
+        android:background="@color/colorPrimaryDark"
+        android:alpha="0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Light "
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Switch
+        android:id="@+id/swOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:switchMinWidth="50dp"
+        android:layout_toRightOf="@+id/light"/>
+
+    <TextView
+        android:id="@+id/dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/swOnOff"
+        android:textColor="@color/colorAccent"
+        android:text=" Dark"/>
 
     <ImageView
         android:id="@+id/profPic"
