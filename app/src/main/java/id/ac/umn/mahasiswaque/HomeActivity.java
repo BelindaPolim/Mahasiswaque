@@ -29,7 +29,6 @@ import java.util.logging.Handler;
 import java.util.prefs.Preferences;
 
 public class HomeActivity extends AppCompatActivity {
-    EditText inputSearch;
     ListView listView;
     FirebaseDatabase db;
     DatabaseReference reff;
@@ -55,7 +54,6 @@ public class HomeActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.lists);
 
-        Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
         reff.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -120,5 +118,4 @@ public class HomeActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

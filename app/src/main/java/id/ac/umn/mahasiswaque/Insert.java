@@ -32,8 +32,6 @@ import java.io.IOException;
 
 public class Insert extends AppCompatActivity {
     ImageView profPic;
-//    EditText txtNIM, txtName, txtBio;
-//    Spinner spMajor, spYear;
     Button btnChange, btnInsert;
     DatabaseReference reff;
     Mahasiswa mhs;

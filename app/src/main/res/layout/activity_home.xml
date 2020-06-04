@@ -15,11 +15,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/add" />
-    <EditText android:id="@+id/inputSearch"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search mahasiswa"
-        android:inputType="textVisiblePassword"/>
+
     <ListView
         android:id="@+id/lists"
         android:layout_width="match_parent"
