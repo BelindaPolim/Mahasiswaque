@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     Button mButtonLogin;
     DatabaseHelper db;
     Boolean signUp = false, user;
+    int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this,android.R.style.Theme_Translucent_NoTitleBar);
 
         db = new DatabaseHelper(this);
-        if(signUp == false){
+        if(signUp == false && i  ==0){
             user = db.addUser("user", "useruser");
             signUp = true;
+            i++;
         }
 
         mTextUsername = (EditText)findViewById(R.id.etUser);
