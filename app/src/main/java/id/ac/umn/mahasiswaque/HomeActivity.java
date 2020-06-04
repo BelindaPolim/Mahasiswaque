@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -25,6 +26,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.logging.Handler;
 import java.util.prefs.Preferences;
 
@@ -51,24 +53,34 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         db = FirebaseDatabase.getInstance();
-        reff = db.getReference("Users");
+        reff = FirebaseDatabase.getInstance().getReference("Mahasiswa");
 
         listView = (ListView) findViewById(R.id.lists);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+        listView.setAdapter(adapter);
 
         Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
         reff.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String value=dataSnapshot.getValue(String.class);
-                arrayList.add(value);
-                adapter = new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_1, arrayList);
-                listView.setAdapter(adapter);
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
+//                String value=dataSnapshot.getValue(Mahasiswa.class).toString();
+//                arrayList.add(value);
+//                adapter.notifyDataSetChanged();
+
+//                String string = dataSnapshot.getValue(String.class);
+//                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                String name = dataSnapshot.child("name").getValue(String.class);
+                arrayList.add(name);
+
+                adapter.notifyDataSetChanged();
+//                adapter = new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_1, arrayList);
+//                listView.setAdapter(adapter);
 
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+                adapter.notifyDataSetChanged();
             }
 
             @Override

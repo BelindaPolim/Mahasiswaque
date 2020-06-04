@@ -9,8 +9,11 @@ public class Mahasiswa {
     private String Bio;
 
     public Mahasiswa() {
-    }
 
+    }
+    public String toString(){
+        return this.NIM + ", " + this.Name;
+    }
     public String getNIM() {
         return NIM;
     }
